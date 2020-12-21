@@ -1,0 +1,1320 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <!-- Meta Description -->
+    <meta name="description" content="" />
+
+    <!-- Bootstrap + Fontawesome + Js + Font CSS CDN -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/css?family=Merriweather|Open+Sans|Oswald|Baloo|Lato"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet/less" type="text/css" href="styles.less" />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.9.0/less.min.js"></script>
+    <link rel="stylesheet" href="css/home-css.css" />
+    <script src="/home-js.js" async></script>
+    <title>Menu</title>
+  </head>
+  <body>
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-xl navbar-dark fixed-top main-nav">
+      <!-- Navbar brand -->
+      <a class="navbar-brand logo" href="/main-home.html">Highland Coffee</a>
+
+      <!-- Collapse button -->
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#basicExampleNav"
+        aria-controls="basicExampleNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Collapsible content -->
+      <div class="collapse navbar-collapse" id="basicExampleNav">
+        <!-- Links -->
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#"
+              >Brand's Story
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <!-- Dropdown -->
+          <li class="nav-item dropdown active">
+            <a
+              class="nav-link dropdown-toggle"
+              id="navbarDropdownMenuLink"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+              >Menu</a
+            >
+            <div
+              class="dropdown-menu dropdown-primary"
+              aria-labelledby="navbarDropdownMenuLink"
+            >
+              <a class="dropdown-item dropdown-item-menu" href="/menu-home.html"
+                >Coffee</a
+              >
+              <a class="dropdown-item dropdown-item-menu" href="/menu-home.html"
+                >Macchiato</a
+              >
+              <a class="dropdown-item dropdown-item-menu" href="/menu-home.html"
+                >Tea</a
+              >
+            </div>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Blog</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/recruitment-home.html">Recruitment</a>
+          </li>
+        </ul>
+        <!-- Links -->
+
+        <button type="button" class="btn">
+          <span
+            class="search-icon"
+            data-toggle="modal"
+            data-target="#loginform"
+            style="color: white; margin-right: 5px;"
+            ><i class="fas fa-user fa-2x"></i
+          ></span>
+        </button>
+        <form class="form-inline">
+          <div class="md-form my-0">
+            <input
+              class="form-control mr-sm-2"
+              type="text"
+              placeholder="Search"
+              aria-label="Search"
+            />
+          </div>
+          <a href="#"
+            ><span class="search-icon" style="color: white;"
+              ><i class="fas fa-search"></i></span
+          ></a>
+          <button type="button" class="btn">
+            <span
+              class="search-icon"
+              style="color: white;"
+              data-target="#cart"
+              data-toggle="modal"
+              ><i class="fas fa-shopping-cart fa-2x"></i></span
+            ><span style="color: #ffffff;"
+              >(<span class="total-count"></span>)</span
+            >
+          </button>
+        </form>
+      </div>
+      <!-- Collapsible content -->
+    </nav>
+    <!-- Modal Shopping Cart -->
+    <div
+      class="modal fade"
+      id="cart"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5
+              class="modal-title"
+              id="exampleModalLabel"
+              style="font-size: 24px; font-weight: 900; text-transform: uppercase;"
+            >
+              Your Cart
+            </h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <table class="show-cart table"></table>
+            <div>Total Price: <span class="total-cart"></span> Đ</div>
+          </div>
+          <div class="modal-footer">
+            <button class="clear-cart btn btn-danger mr-auto">
+              Clear Cart
+            </button>
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" class="btn btn-primary">Purchase</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal Shopping Cart -->
+    <!-- Modal Login -->
+    <div
+      class="modal fade"
+      id="loginform"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-body">
+            <form class="form-horizontal">
+              <div class="row form-header">
+                <div class="col-md-11">
+                  <h5
+                    class="modal-title"
+                    id="exampleModalLabel"
+                    style="font-weight: 700;"
+                  >
+                    Welcome to HighLand Coffee! Please login.
+                  </h5>
+                </div>
+                <div class="col-md-1">
+                  <button
+                    type="button"
+                    class="close"
+                    data-dismiss="modal"
+                    aria-label="Close"
+                  >
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+              </div>
+              <fieldset>
+                <div class="social-login">
+                  <button class="btn facebook-btn social-btn" type="button">
+                    <span
+                      ><i class="fab fa-facebook-f"></i> Sign in with
+                      Facebook</span
+                    >
+                  </button>
+                  <button class="btn google-btn social-btn" type="button">
+                    <span
+                      ><i class="fab fa-google-plus-g"></i> Sign in with
+                      Google+</span
+                    >
+                  </button>
+                </div>
+                <p style="text-align:center">OR</p>
+                <!-- Text input-->
+                <div class="form-group">
+                  <label class="col-md-12 control-label" for="fn"
+                    >Phone Number or Email*</label
+                  >
+                  <div class="col-md-12">
+                    <input
+                      id="fn"
+                      name="fn"
+                      type="text"
+                      placeholder="Please enter your Phone Number or Email"
+                      class="form-control input-md"
+                      required=""
+                    />
+                  </div>
+                </div>
+
+                <!-- Text input-->
+                <div class="form-group">
+                  <label class="col-md-12 control-label" for="ln"
+                    >Password*</label
+                  >
+                  <div class="col-md-12">
+                    <input
+                      id="ln"
+                      name="ln"
+                      type="text"
+                      placeholder="Please enter your Password"
+                      class="form-control input-md"
+                      required=""
+                    />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-md-12">
+                    <button class="btn btn-dark btn-block" type="submit">
+                      <i class="fas fa-sign-in-alt"></i> Sign in
+                    </button>
+                  </div>
+                  <div class="col-md-12">
+                    <a href="#" id="forgot_pswd">Forgot password?</a>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-md-12">
+                    <button
+                      class="btn btn-primary btn-block"
+                      type="button"
+                      id="btn-signup"
+                      style="background-color: #ea8025;"
+                    >
+                      <i class="fas fa-user-plus"></i> Sign up New Account
+                    </button>
+                  </div>
+                </div>
+              </fieldset>
+            </form>
+          </div>
+          <!-- Forgot PW -->
+          <form action="/reset/password/" class="form-reset">
+            <div class="container">
+              <div class="row form-header">
+                <div class="col-md-10">
+                  <h5
+                    class="modal-title"
+                    id="exampleModalLabel"
+                    style="font-weight: 700;"
+                  >
+                    Reset Your Password
+                  </h5>
+                </div>
+                <div class="col-md-2">
+                  <button
+                    type="button"
+                    class="close"
+                    data-dismiss="modal"
+                    aria-label="Close"
+                  >
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-12">
+              <input
+                type="email"
+                id="resetEmail"
+                class="form-control"
+                placeholder="Enter your email address"
+                required=""
+                autofocus=""
+              />
+              <button class="btn btn-primary btn-block" type="submit">
+                Reset Password
+              </button>
+              <a href="#" id="cancel_reset"
+                ><i class="fas fa-angle-left"></i> Back</a
+              >
+            </div>
+          </form>
+          <!-- Forgot PW -->
+
+          <!-- Sign Up Form -->
+          <form action="/signup/" class="form-signup">
+            <div class="container">
+              <div class="row form-header">
+                <div class="col-md-10">
+                  <h5
+                    class="modal-title"
+                    id="exampleModalLabel"
+                    style="font-weight: 700;"
+                  >
+                    Create Your Coffee Account
+                  </h5>
+                </div>
+                <div class="col-md-2">
+                  <button
+                    type="button"
+                    class="close"
+                    data-dismiss="modal"
+                    aria-label="Close"
+                  >
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="container">
+              <div class="social-login text-center">
+                <button class="btn facebook-btn social-btn" type="button">
+                  <span
+                    ><i class="fab fa-facebook-f"></i> Sign up with
+                    Facebook</span
+                  >
+                </button>
+              </div>
+              <div class="social-login text-center">
+                <button class="btn google-btn social-btn" type="button">
+                  <span
+                    ><i class="fab fa-google-plus-g"></i> Sign up with
+                    Google+</span
+                  >
+                </button>
+              </div>
+            </div>
+
+            <p style="text-align:center">OR</p>
+            <div class="container">
+              <div class="row">
+                <div class="col-md-12">
+                  <input
+                    type="text"
+                    id="user-name"
+                    class="form-control"
+                    placeholder="Full name"
+                    required=""
+                    autofocus=""
+                  />
+                </div>
+                <div class="col-md-12">
+                  <input
+                    type="email"
+                    id="user-email"
+                    class="form-control"
+                    placeholder="Email address"
+                    required
+                    autofocus=""
+                  />
+                </div>
+                <div class="col-md-12">
+                  <input
+                    type="address"
+                    id="user-address"
+                    class="form-control"
+                    placeholder="Address"
+                    required
+                    autofocus=""
+                  />
+                </div>
+                <div class="col-md-12">
+                  <input
+                    type="phonenumber"
+                    id="phone-number"
+                    class="form-control"
+                    placeholder="Phone Number"
+                    required
+                    autofocus=""
+                  />
+                </div>
+                <div class="col-md-12">
+                  <input
+                    type="password"
+                    id="user-pass"
+                    class="form-control"
+                    placeholder="Password"
+                    required
+                    autofocus=""
+                  />
+                </div>
+                <div class="col-md-12">
+                  <input
+                    type="password"
+                    id="user-repeatpass"
+                    class="form-control"
+                    placeholder="Repeat Password"
+                    required
+                    autofocus=""
+                  />
+                </div>
+                <div class="col-md-12">
+                  <button class="btn btn-primary btn-block" type="submit">
+                    <i class="fas fa-user-plus"></i> Sign Up
+                  </button>
+                </div>
+                <div class="col-md-12">
+                  <a href="#" id="cancel_signup"
+                    ><i class="fas fa-angle-left"></i> Back</a
+                  >
+                </div>
+              </div>
+            </div>
+          </form>
+          <!-- Sign Up Form -->
+          <br />
+        </div>
+      </div>
+    </div>
+    <!-- Modal Login -->
+
+    <!-- Main Menu -->
+
+    <div
+      class="jumbotron"
+      style="background-image: url('/img/menu-home/bg-menu-home.jpg'); background-position: center;"
+    >
+      <div class="text-white text-left py-5 px-4 my-5">
+        <div>
+          <h2
+            class="card-title h1-responsive pt-3 mb-5 font-bold"
+            style="text-transform: uppercase; font-size: 40px;"
+          >
+            <strong>Menu</strong>
+          </h2>
+        </div>
+      </div>
+    </div>
+
+    <div class="menu-wrap">
+      <div class="container">
+        <div class="row">
+          <div
+            class="col-lg-3 col-md-3 col-sm-4 col-xs-12 side-bar align-self-baseline sticky-top"
+          >
+            <aside class="sidebar-menu">
+              <ul>
+                <li>
+                  <a href="#coffee">Coffee</a>
+                </li>
+                <li>
+                  <a href="#macchiato">Macchiato</a>
+                </li>
+                <li>
+                  <a href="#tea">Tea</a>
+                </li>
+              </ul>
+            </aside>
+          </div>
+          <div class="col-lg-9 col-md-9 col-sm-4 col-xs-12 left-before">
+            <div class="row">
+              <div class="col-xs-12 col-md-12 col-lg-12">
+                <h2 class="menu-title" style="color: black;" id="coffee">
+                  Coffee
+                </h2>
+              </div>
+              <div class="clearfix"></div>
+              <div class="d-flex flex-row flex-wrap bd-highlight">
+                <div class="menu-item">
+                  <div class="menu-item-inner item-img">
+                    <a href="#" title=""
+                      ><img
+                        src="img/menu-item/item-1.jpg"
+                        alt="tra o long sen tu nhien"
+                        class="image-resize img-fluid"
+                    /></a>
+                  </div>
+                  <div class="menu-item-info">
+                    <h3>
+                      <a href="#" title="TRA O LONG SEN" class="shop-item-title"
+                        >Trà Ô Long Sen An Nhiên</a
+                      >
+                    </h3>
+                    <div class="price-item">45,000 Đ</div>
+                    <button
+                      class="btn order-item"
+                      type="button"
+                      data-name="Trà Ô Long Sen An Nhiên"
+                      data-price="45000"
+                    >
+                      Order
+                    </button>
+                    <button class="btn read-item" type="button">
+                      Read More
+                    </button>
+                  </div>
+                </div>
+                <div class="menu-item">
+                  <div class="menu-item-inner">
+                    <a href="#" title=""
+                      ><img
+                        src="img/menu-item/item-2.jpg"
+                        alt="tra o long sen tu nhien"
+                        class="image-resize img-fluid"
+                    /></a>
+                  </div>
+                  <div class="menu-item-info">
+                    <h3>
+                      <a href="#" class="shop-item-title" title="TRA O LONG SEN"
+                        >Caramel Macchiato</a
+                      >
+                    </h3>
+                    <div class="price-item">45,000 Đ</div>
+                    <button
+                      class="btn order-item"
+                      type="button"
+                      data-name="Caramel Macchiato"
+                      data-price="45000"
+                    >
+                      Order
+                    </button>
+                    <button class="btn read-item" type="button">
+                      Read More
+                    </button>
+                  </div>
+                </div>
+                <div class="menu-item">
+                  <div class="menu-item-inner">
+                    <a href="#" title=""
+                      ><img
+                        src="img/menu-item/item-3.jpg"
+                        alt="tra o long sen tu nhien"
+                        class="image-resize img-fluid"
+                    /></a>
+                  </div>
+                  <div class="menu-item-info">
+                    <h3>
+                      <a href="#" title="TRA O LONG SEN" class="shop-item-title"
+                        >Trà Ô Long Vải Như Ý</a
+                      >
+                    </h3>
+                    <div class="price-item">45,000 Đ</div>
+                    <button
+                      class="btn order-item"
+                      type="button"
+                      data-name="Trà Ô Long Vải Như Ý"
+                      data-price="45000"
+                    >
+                      Order
+                    </button>
+                    <button class="btn read-item" type="button">
+                      Read More
+                    </button>
+                  </div>
+                </div>
+                <div class="menu-item">
+                  <div class="menu-item-inner">
+                    <a href="#" title=""
+                      ><img
+                        src="img/menu-item/item-4.jpg"
+                        alt="tra o long sen tu nhien"
+                        class="image-resize img-fluid"
+                    /></a>
+                  </div>
+                  <div class="menu-item-info">
+                    <h3>
+                      <a href="#" title="TRA O LONG SEN" class="shop-item-title"
+                        >Da Cá Sấy Giòn Vị Trứng Muối</a
+                      >
+                    </h3>
+                    <div class="price-item">45,000 Đ</div>
+                    <button
+                      class="btn order-item"
+                      type="button"
+                      data-name="Da Cá Sấy Giòn Vị Trứng Muối"
+                      data-price="45000"
+                    >
+                      Order
+                    </button>
+                    <button class="btn read-item" type="button">
+                      Read More
+                    </button>
+                  </div>
+                </div>
+                <div class="menu-item">
+                  <div class="menu-item-inner">
+                    <a href="#" title=""
+                      ><img
+                        src="img/menu-item/item-5.jpg"
+                        alt="tra o long sen tu nhien"
+                        class="image-resize img-fluid"
+                    /></a>
+                  </div>
+                  <div class="menu-item-info">
+                    <h3>
+                      <a href="#" title="TRA O LONG SEN" class="shop-item-title"
+                        >Trà Đào Cam Sả</a
+                      >
+                    </h3>
+                    <div class="price-item">45,000 Đ</div>
+                    <button
+                      class="btn order-item"
+                      type="button"
+                      data-name="Trà Đào Cam Sả"
+                      data-price="45000"
+                    >
+                      Order
+                    </button>
+                    <button class="btn read-item" type="button">
+                      Read More
+                    </button>
+                  </div>
+                </div>
+                <div class="menu-item">
+                  <div class="menu-item-inner">
+                    <a href="#" title=""
+                      ><img
+                        src="img/menu-item/item-6.jpg"
+                        alt="tra o long sen tu nhien"
+                        class="image-resize img-fluid item-img"
+                    /></a>
+                  </div>
+                  <div class="menu-item-info">
+                    <h3>
+                      <a href="#" title="TRA O LONG SEN" class="shop-item-title"
+                        >Trà Đen Macchiato</a
+                      >
+                    </h3>
+                    <div class="price-item">45,000 Đ</div>
+                    <button
+                      class="btn order-item"
+                      type="button"
+                      data-name="Trà Đen Macchiato"
+                      data-price="45000"
+                    >
+                      Order
+                    </button>
+                    <button class="btn read-item" type="button">
+                      Read More
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12 col-md-12 col-lg-12">
+                <h2 class="menu-title" style="color: black;" id="macchiato">
+                  Macchiato
+                </h2>
+              </div>
+              <div class="clearfix"></div>
+              <div class="d-flex flex-row flex-wrap bd-highlight">
+                <div class="menu-item">
+                  <div class="menu-item-inner">
+                    <a href="#" title=""
+                      ><img
+                        src="img/menu-item/item-2.jpg"
+                        alt="tra o long sen tu nhien"
+                        class="image-resize img-fluid item-img"
+                    /></a>
+                  </div>
+                  <div class="menu-item-info">
+                    <h3>
+                      <a href="#" title="TRA O LONG SEN"
+                        >Trà Ô Long Sen An Nhiên</a
+                      >
+                    </h3>
+                    <div class="price-item">45,000 Đ</div>
+                    <button
+                      class="btn order-item"
+                      type="button"
+                      data-name="Trà Ô Long Sen An Nhiên"
+                      data-price="45000"
+                    >
+                      Order
+                    </button>
+                    <button class="btn read-item" type="button">
+                      Read More
+                    </button>
+                  </div>
+                </div>
+                <div class="menu-item">
+                  <div class="menu-item-inner">
+                    <a href="#" title=""
+                      ><img
+                        src="img/menu-item/item-3.jpg"
+                        alt="tra o long sen tu nhien"
+                        class="image-resize img-fluid item-img"
+                    /></a>
+                  </div>
+                  <div class="menu-item-info">
+                    <h3>
+                      <a href="#" title="TRA O LONG SEN">Caramel Macchiato</a>
+                    </h3>
+                    <div class="price-item">45,000 Đ</div>
+                    <button
+                      class="btn order-item"
+                      type="button"
+                      data-name="Caramel Macchiato"
+                      data-price="45000"
+                    >
+                      Order
+                    </button>
+                    <button class="btn read-item" type="button">
+                      Read More
+                    </button>
+                  </div>
+                </div>
+                <div class="menu-item">
+                  <div class="menu-item-inner">
+                    <a href="#" title=""
+                      ><img
+                        src="img/menu-item/item-1.jpg"
+                        alt="tra o long sen tu nhien"
+                        class="image-resize img-fluid item-img"
+                    /></a>
+                  </div>
+                  <div class="menu-item-info">
+                    <h3>
+                      <a href="#" title="TRA O LONG SEN"
+                        >Trà Ô Long Vải Như Ý</a
+                      >
+                    </h3>
+                    <div class="price-item">45,000 Đ</div>
+                    <button
+                      class="btn order-item"
+                      type="button"
+                      data-name="Trà Ô Long Vải Như Ý"
+                      data-price="45000"
+                    >
+                      Order
+                    </button>
+                    <button class="btn read-item" type="button">
+                      Read More
+                    </button>
+                  </div>
+                </div>
+                <div class="menu-item">
+                  <div class="menu-item-inner">
+                    <a href="#" title=""
+                      ><img
+                        src="img/menu-item/item-4.jpg"
+                        alt="tra o long sen tu nhien"
+                        class="image-resize img-fluid item-img"
+                    /></a>
+                  </div>
+                  <div class="menu-item-info">
+                    <h3>
+                      <a href="#" title="TRA O LONG SEN"
+                        >Da Cá Sấy Giòn Vị Trứng Muối</a
+                      >
+                    </h3>
+                    <div class="price-item">45,000 Đ</div>
+                    <button
+                      class="btn order-item"
+                      type="button"
+                      data-name="Da Cá Sấy Giòn Vị Trứng Muối"
+                      data-price="45000"
+                    >
+                      Order
+                    </button>
+                    <button class="btn read-item" type="button">
+                      Read More
+                    </button>
+                  </div>
+                </div>
+                <div class="menu-item">
+                  <div class="menu-item-inner">
+                    <a href="#" title=""
+                      ><img
+                        src="img/menu-item/item-5.jpg"
+                        alt="tra o long sen tu nhien"
+                        class="image-resize img-fluid item-img"
+                    /></a>
+                  </div>
+                  <div class="menu-item-info">
+                    <h3>
+                      <a href="#" title="TRA O LONG SEN">Trà Đào Cam Sả</a>
+                    </h3>
+                    <div class="price-item">45,000 Đ</div>
+                    <button
+                      class="btn order-item"
+                      type="button"
+                      data-name="Trà Đào Cam Sả"
+                      data-price="45000"
+                    >
+                      Order
+                    </button>
+                    <button class="btn read-item" type="button">
+                      Read More
+                    </button>
+                  </div>
+                </div>
+                <div class="menu-item">
+                  <div class="menu-item-inner">
+                    <a href="#" title=""
+                      ><img
+                        src="img/menu-item/item-6.jpg"
+                        alt="tra o long sen tu nhien"
+                        class="image-resize img-fluid item-img"
+                    /></a>
+                  </div>
+                  <div class="menu-item-info">
+                    <h3>
+                      <a href="#" title="TRA O LONG SEN">Trà Đen Macchiato</a>
+                    </h3>
+                    <div class="price-item">45,000 Đ</div>
+                    <button
+                      class="btn order-item"
+                      type="button"
+                      data-name="Trà Đen Macchiato"
+                      data-price="45000"
+                    >
+                      Order
+                    </button>
+                    <button class="btn read-item" type="button">
+                      Read More
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12 col-md-12 col-lg-12">
+                <h2 class="menu-title" style="color: black;" id="tea">Tea</h2>
+              </div>
+              <div class="clearfix"></div>
+              <div class="d-flex flex-row flex-wrap bd-highlight">
+                <div class="menu-item">
+                  <div class="menu-item-inner">
+                    <a href="#" title=""
+                      ><img
+                        src="img/menu-item/item-5.jpg"
+                        alt="tra o long sen tu nhien"
+                        class="image-resize img-fluid item-img"
+                    /></a>
+                  </div>
+                  <div class="menu-item-info">
+                    <h3>
+                      <a href="#" title="TRA O LONG SEN"
+                        >Trà Ô Long Sen An Nhiên</a
+                      >
+                    </h3>
+                    <div class="price-item">45,000 Đ</div>
+                    <button
+                      class="btn order-item"
+                      type="button"
+                      data-name="Trà Ô Long Sen An Nhiên"
+                      data-price="45000"
+                    >
+                      Order
+                    </button>
+                    <button class="btn read-item" type="button">
+                      Read More
+                    </button>
+                  </div>
+                </div>
+                <div class="menu-item">
+                  <div class="menu-item-inner">
+                    <a href="#" title=""
+                      ><img
+                        src="img/menu-item/item-6.jpg"
+                        alt="tra o long sen tu nhien"
+                        class="image-resize img-fluid item-img"
+                    /></a>
+                  </div>
+                  <div class="menu-item-info">
+                    <h3>
+                      <a href="#" title="TRA O LONG SEN">Caramel Macchiato</a>
+                    </h3>
+                    <div class="price-item">45,000 Đ</div>
+                    <button
+                      class="btn order-item"
+                      type="button"
+                      data-name="Caramel Macchiato"
+                      data-price="45000"
+                    >
+                      Order
+                    </button>
+                    <button class="btn read-item" type="button">
+                      Read More
+                    </button>
+                  </div>
+                </div>
+                <div class="menu-item">
+                  <div class="menu-item-inner">
+                    <a href="#" title=""
+                      ><img
+                        src="img/menu-item/item-4.jpg"
+                        alt="tra o long sen tu nhien"
+                        class="image-resize img-fluid item-img"
+                    /></a>
+                  </div>
+                  <div class="menu-item-info">
+                    <h3>
+                      <a href="#" title="TRA O LONG SEN"
+                        >Trà Ô Long Vải Như Ý</a
+                      >
+                    </h3>
+                    <div class="price-item">45,000 Đ</div>
+                    <button
+                      class="btn order-item"
+                      type="button"
+                      data-name="Trà Ô Long Vải Như Ý"
+                      data-price="45000"
+                    >
+                      Order
+                    </button>
+                    <button class="btn read-item" type="button">
+                      Read More
+                    </button>
+                  </div>
+                </div>
+                <div class="menu-item">
+                  <div class="menu-item-inner">
+                    <a href="#" title=""
+                      ><img
+                        src="img/menu-item/item-3.jpg"
+                        alt="tra o long sen tu nhien"
+                        class="image-resize img-fluid item-img"
+                    /></a>
+                  </div>
+                  <div class="menu-item-info">
+                    <h3>
+                      <a href="#" title="TRA O LONG SEN"
+                        >Da Cá Sấy Giòn Vị Trứng Muối</a
+                      >
+                    </h3>
+                    <div class="price-item">45,000 Đ</div>
+                    <button class="btn order-item" type="button">Order</button>
+                    <button
+                      class="btn read-item"
+                      type="button"
+                      data-name="Da Cá Sấy Giòn Vị Trứng Muối"
+                      data-price="45000"
+                    >
+                      Read More
+                    </button>
+                  </div>
+                </div>
+                <div class="menu-item">
+                  <div class="menu-item-inner">
+                    <a href="#" title=""
+                      ><img
+                        src="img/menu-item/item-2.jpg"
+                        alt="tra o long sen tu nhien"
+                        class="image-resize img-fluid item-img"
+                    /></a>
+                  </div>
+                  <div class="menu-item-info">
+                    <h3>
+                      <a href="#" title="TRA O LONG SEN">Trà Đào Cam Sả</a>
+                    </h3>
+                    <div class="price-item">45,000 Đ</div>
+                    <button
+                      class="btn order-item"
+                      type="button"
+                      data-name="Trà Đào Cam Sả"
+                      data-price="45000"
+                    >
+                      Order
+                    </button>
+                    <button class="btn read-item" type="button">
+                      Read More
+                    </button>
+                  </div>
+                </div>
+                <div class="menu-item">
+                  <div class="menu-item-inner">
+                    <a href="#" title=""
+                      ><img
+                        src="img/menu-item/item-1.jpg"
+                        alt="tra o long sen tu nhien"
+                        class="image-resize img-fluid item-img"
+                    /></a>
+                  </div>
+                  <div class="menu-item-info">
+                    <h3>
+                      <a href="#" title="TRA O LONG SEN">Trà Đen Macchiato</a>
+                    </h3>
+                    <div class="price-item">45,000 Đ</div>
+                    <button
+                      class="btn order-item"
+                      type="button"
+                      data-name="Trà Đen Macchiato"
+                      data-price="45000"
+                    >
+                      Order
+                    </button>
+                    <button class="btn read-item" type="button">
+                      Read More
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Main Menu -->
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-top">
+        <div class="container mx-auto text-center text-md-left">
+          <!-- Grid row -->
+          <div class="row py-5 dark-grey-text ml-3">
+            <!-- Grid column 1-->
+            <div class="col-md-3 col-lg-3 col-xl-3 mb-4 mx-auto">
+              <!-- Content -->
+              <h6 class="text-uppercase hr-line">
+                Opening Hours
+              </h6>
+              <div class="hours-inner">
+                <div class="hours-working">
+                  <div class="hours-item">
+                    <div class="each-item">
+                      <span class="wh-days">Monday</span>
+                      <span class="wh-lines">
+                        <span class="wh-lines-inner"></span>
+                      </span>
+                      <span class="wh-hours">
+                        <span class="wh-close">Closed</span>
+                      </span>
+                    </div>
+                  </div>
+                  <div class="hours-item">
+                    <div class="each-item">
+                      <span class="wh-days">Tuesday</span>
+                      <span class="wh-lines">
+                        <span class="wh-lines-inner"></span>
+                      </span>
+                      <span class="wh-hours">
+                        <span class="wh-from">9:00</span>
+                        <span class="wh-dilimiter">-</span>
+                        <span class="wh-to">22:00</span>
+                      </span>
+                    </div>
+                  </div>
+                  <div class="hours-item">
+                    <div class="each-item">
+                      <span class="wh-days">Wednesday</span>
+                      <span class="wh-lines">
+                        <span class="wh-lines-inner"></span>
+                      </span>
+                      <span class="wh-hours">
+                        <span class="wh-from">9:00</span>
+                        <span class="wh-dilimiter">-</span>
+                        <span class="wh-to">22:00</span>
+                      </span>
+                    </div>
+                  </div>
+                  <div class="hours-item">
+                    <div class="each-item">
+                      <span class="wh-days">Thursday</span>
+                      <span class="wh-lines">
+                        <span class="wh-lines-inner"></span>
+                      </span>
+                      <span class="wh-hours">
+                        <span class="wh-from">9:00</span>
+                        <span class="wh-dilimiter">-</span>
+                        <span class="wh-to">22:00</span>
+                      </span>
+                    </div>
+                  </div>
+                  <div class="hours-item">
+                    <div class="each-item">
+                      <span class="wh-days">Friday*</span>
+                      <span class="wh-lines">
+                        <span class="wh-lines-inner"></span>
+                      </span>
+                      <span class="wh-hours">
+                        <span class="wh-from">9:00</span>
+                        <span class="wh-dilimiter">-</span>
+                        <span class="wh-to">1:00</span>
+                      </span>
+                    </div>
+                  </div>
+                  <div class="hours-item">
+                    <div class="each-item">
+                      <span class="wh-days">Saturday*</span>
+                      <span class="wh-lines">
+                        <span class="wh-lines-inner"></span>
+                      </span>
+                      <span class="wh-hours">
+                        <span class="wh-from">12:00</span>
+                        <span class="wh-dilimiter">-</span>
+                        <span class="wh-to">01:00</span>
+                      </span>
+                    </div>
+                  </div>
+                  <div class="hours-item">
+                    <div class="each-item">
+                      <span class="wh-days">Sunday</span>
+                      <span class="wh-lines">
+                        <span class="wh-lines-inner"></span>
+                      </span>
+                      <span class="wh-hours">
+                        <span class="wh-from">9:00</span>
+                        <span class="wh-dilimiter">-</span>
+                        <span class="wh-to">22:00</span>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Grid column 1-->
+
+            <!-- Grid column 2-->
+            <div class="col-md-2 col-lg-3 col-xl-3 mb-4 mx-auto">
+              <div class="posts-inner">
+                <h6 class="text-uppercase hr-line">
+                  Latest Posts
+                </h6>
+                <ul>
+                  <li>
+                    <a href="https://www.facebook.com/"
+                      >Expand Your Mind, Change Everything</a
+                    >
+                    <span class="post-date">30.04.2019</span>
+                  </li>
+                  <li>
+                    <a href="https://www.facebook.com/">Places to get lost</a
+                    ><span class="post-date">30.04.2019</span>
+                  </li>
+                  <li>
+                    <a href="https://www.facebook.com/">Lewis Howes</a
+                    ><span class="post-date">30.04.2019</span>
+                  </li>
+                  <li>
+                    <a href="https://www.facebook.com/"
+                      >Elevate Your Expectations</a
+                    ><span class="post-date">30.04.2019</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <!-- Grid column 2-->
+
+            <!-- Grid column 3-->
+            <div class="col-md-3 col-lg-3 col-xl-3 mb-4 mx-auto">
+              <div class="contact-inner">
+                <div class="contact-inner-top">
+                  <h6 class="text-uppercase hr-line">
+                    Contact Us
+                  </h6>
+                  <div class="contact-content">
+                    <a
+                      href="http://www.facebook.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >info@cafe&amp;shop</a
+                    >
+                    <br />
+                    0129-929-521
+                    <br />
+                    Nguyen Thi Minh Khai, District 1
+                    <br />
+                    HCM City
+                  </div>
+                </div>
+                <div class="contact-inner-bot">
+                  <h6 class="text-uppercase hr-line">The last standard post</h6>
+                  <form class="form-inline">
+                    <div class="form-group">
+                      <label for="inputemail" class="sr-only">Your Email</label>
+                      <input
+                        type="email"
+                        class="form-control"
+                        id="inputemail"
+                        placeholder="Your E-Mail"
+                        onblur="validateEmail(this);"
+                      />
+                    </div>
+                    <button
+                      type="submit"
+                      class="btn submit-email"
+                      onclick="validateEmail()"
+                    >
+                      <i class="fas fa-caret-right fa-sm"></i>
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <!-- Grid column 3-->
+
+            <!-- Grid column 4-->
+            <div class="col-md-4 col-lg-3 col-xl-3 mb-md-0 mb-4 mx-auto">
+              <div class="location-inner">
+                <h6 class="text-uppercase hr-line">
+                  Other Locations
+                </h6>
+                <div class="location-addr">
+                  <div class="shop-name">
+                    <h7>Hightland Coffee Shop</h7>
+                  </div>
+                  <div class="addr">
+                    <br />
+                    Flood 5, Landmark 81
+                    <br />
+                    Binh Thanh District, HCM City
+                  </div>
+                </div>
+                <hr />
+                <div class="location-addr">
+                  <div class="shop-name">
+                    <h7>Coffee House</h7>
+                  </div>
+                  <div class="addr">
+                    <br />
+                    Mega Mall Thao Dien
+                    <br />
+                    District 2, HCM City
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Grid column 4-->
+          </div>
+          <!-- Grid row -->
+        </div>
+      </div>
+      <div class="footer-bot">
+        <div class="row">
+          <div class="col-md pl-md-5">HIGHLAND COFFEE</div>
+          <div class="col-md">
+            <div class="row">
+              <div class="col-md-2 text-md-center">
+                <a href="https://www.instagram.com/" target="_blank"
+                  ><i class="fab fa-instagram fa-md"></i
+                ></a>
+              </div>
+              <div class="col-md-2 text-md-center">
+                <a href="https://twitter.com/" target="_blank"
+                  ><i class="fab fa-twitter fa-md"></i
+                ></a>
+              </div>
+              <div class="col-md-2 text-md-center">
+                <a href="https://www.facebook.com/" target="_blank"
+                  ><i class="fab fa-facebook-f fa-md"></i
+                ></a>
+              </div>
+              <div class="col-md-2 text-md-center">
+                <a href="https://www.tumblr.com/" target="_blank"
+                  ><i class="fab fa-tumblr fa-md"></i
+                ></a>
+              </div>
+              <div class="col-md-2 text-md-center">
+                <a href="https://vimeo.com/" target="_blank"
+                  ><i class="fab fa-vimeo-v fa-md"></i
+                ></a>
+              </div>
+              <div class="col-md-2 text-md-center">
+                <a href="https://www.linkedin.com/" target="_blank"
+                  ><i class="fab fa-linkedin-in fa-lg"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md text-md-right pr-md-5">
+            © 2019 GROUP 5
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- Footer -->
+  </body>
+</html>
